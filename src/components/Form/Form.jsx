@@ -8,13 +8,12 @@ export function Form({ isActive, setIsActive, onFormSubmit }) {
 	function changeInputValue(event) {
 		setInputValue(event.target.value);
 	}
-	
-	
-	
+
 	function handleSubmitClick(event) {
 		event.preventDefault();
 		setIsActive(false);
 		onFormSubmit(inputValue);
+		setInputValue("");
 	}
 	return (
 		<>
