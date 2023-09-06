@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import { Form } from "./components/Form/Form";
 import { Header } from "./components/Header/Header";
-import { Item } from "./components/Item/item";
+import { Item } from "./components/Item/Item";
 
 export function App() {
 	const tasks = [
