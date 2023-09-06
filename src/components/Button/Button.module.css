@@ -1,0 +1,20 @@
+.button {
+	margin: 0 3px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	border: 1px solid currentColor;
+	background-color: var(--main-color);
+	transition: color, background-color, 0.3s;
+	cursor: pointer;
+}
+.button:hover:not([disabled]) {
+	background-color: transparent;
+	color: var(--main-color);
+}
+
+.button:disabled {
+	background-color: var(--selected-color);
+	cursor: auto;
+}

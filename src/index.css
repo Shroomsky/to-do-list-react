@@ -1,0 +1,68 @@
+/*============CSS Reset==========*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	min-height: 100vh;
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+ul {
+	list-style: none;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+/*============CSS Reset==========*/
+:root {
+	--bg-color: rgb(234, 239, 241);
+	--main-color: rgb(16, 125, 172);
+	--selected-color: rgba(16, 125, 172, 0.363);
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(238, 248, 255, 1);
+	background-image: linear-gradient(
+		180deg,
+		rgb(76, 133, 173) 0%,
+		rgba(156, 232, 255, 1) 100%
+	);
+}

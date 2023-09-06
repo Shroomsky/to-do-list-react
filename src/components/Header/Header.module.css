@@ -1,0 +1,24 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--main-color);
+}
+.btn {
+	width: 4rem;
+	aspect-ratio: 1;
+	border: none;
+	color: white;
+	background-color: var(--main-color);
+	border-radius: 50%;
+	font-size: 32px;
+	cursor: pointer;
+	transition: transform 0.3s;
+	border: 1px solid currentColor;
+	transition: color, background-color 0.3s;
+}
+.btn:hover {
+	background-color: transparent;
+	color: var(--main-color);
+}
