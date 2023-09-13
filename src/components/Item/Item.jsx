@@ -5,7 +5,7 @@ import styles from "./Item.module.css";
 
 export function Item({
 	name,
-	editable,
+	isInEditMode,
 	done,
 	onDoneClick,
 	onDeleteClick,
@@ -18,14 +18,14 @@ export function Item({
 
 	return (
 		<li className={styles.li} name={name}>
-			{editable && (
+			{isInEditMode && (
 				<Input
 					inputValue={inputValue}
 					setInputValue={setInputValue}
 					value={inputValue}
 				/>
 			)}
-			{!editable && (
+			{!isInEditMode && (
 				<span
 					onClick={onSpanClick}
 					className={`${styles.span} ${done ? styles.done : ""}`}>
@@ -33,7 +33,7 @@ export function Item({
 				</span>
 			)}
 
-			{editable && (
+			{isInEditMode && (
 				<Button onClickHandler={() => onOkClick(inputValue)}>OK</Button>
 			)}
 

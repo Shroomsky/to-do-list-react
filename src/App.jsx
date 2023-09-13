@@ -6,9 +6,9 @@ import { Header } from "./components/Header/Header";
 
 export function App() {
 	const tasks = [
-		{ name: "Wynieść śmieci", editable: false, done: false, id: 1 },
-		{ name: "Nakarmić kota", editable: false, done: false, id: 2 },
-		{ name: "Posprzątać kuwetę", editable: false, done: true, id: 3 },
+		{ name: "Wynieść śmieci", isInEditMode: false, done: false, id: 1 },
+		{ name: "Nakarmić kota", isInEditMode: false, done: false, id: 2 },
+		{ name: "Posprzątać kuwetę", isInEditMode: false, done: true, id: 3 },
 	];
 
 	let idNr = Math.random();
@@ -22,7 +22,7 @@ export function App() {
 			{
 				name: newTodoName,
 				done: false,
-				editable: false,
+				isInEditMode: false,
 				id: idNr + 1,
 			},
 		]);
@@ -65,7 +65,7 @@ export function App() {
 			})
 		);
 	}
-	function setEditableTrue(id) {
+	function setIsInEditMode(id) {
 		setTodos((prevTodos) =>
 			prevTodos.map((task) => {
 				if (task.id !== id) {
@@ -73,7 +73,7 @@ export function App() {
 				} else if (task.done) {
 					return task;
 				} else {
-					return { ...task, editable: true };
+					return { ...task, isInEditMode: true };
 				}
 			})
 		);
@@ -84,7 +84,7 @@ export function App() {
 				if (task.id !== id) {
 					return task;
 				} else {
-					return { ...task, name: updatedName, editable: false };
+					return { ...task, name: updatedName, isInEditMode: false };
 				}
 			})
 		);
@@ -106,15 +106,15 @@ export function App() {
 			/>
 
 			<ul>
-				{todos.map(({ name, editable, done, id }) => (
+				{todos.map(({ name, isInEditMode, done, id }) => (
 					<Item
 						name={name}
-						editable={editable}
+						isInEditMode={isInEditMode}
 						done={done}
 						key={id}
 						onDoneClick={() => setDone(id)}
 						onDeleteClick={() => removeItem(id)}
-						onSpanClick={() => setEditableTrue(id)}
+						onSpanClick={() => setIsInEditMode(id)}
 						onOkClick={(updatedName) => taskUpdate(id, updatedName)}
 						upArrowClick={() => upArrowClick(id)}
 						downArrowClick={() => downArrowClick(id)}
